@@ -1,0 +1,44 @@
+.headercontainer{
+background-color: black;
+height: 75px;
+}
+.logomyworld{
+    float: left;
+    margin-left: 50px;
+    margin-top:10px;
+    width: 50px;
+    height: 50px;
+    background-image: "file:logomyworld2.jpg";
+}
+.titletext{
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+.title{
+   
+    color: #f0f8ff;
+    float: left;
+    margin-left: 30px;
+    vertical-align: center;
+   
+    
+}
+.icons{
+   
+    float:right;
+    top:50%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.planeIcon{
+    margin-right: 30px;
+}
+.LinkedinIcon , .planeIcon, .twitterIcon{
+    padding: 15px;
+    
+    color: white;
+}
+

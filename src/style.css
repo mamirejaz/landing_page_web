@@ -1,0 +1,136 @@
+.maintext{
+    background-image: linear-gradient(to right, #5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);
+    height: 220px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-top: 10%;
+    margin-left:5px;
+    
+
+} 
+
+.introtext{
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+}
+.commonproperties{
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.text2{
+    height: 130px;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.text2content{
+    color: aliceblue;
+    float: left;
+    margin-top: 3%;
+    font-size: 45px;
+    margin-left:5px;
+   
+}
+.part2textdiv{
+    margin-top: 50px;
+}
+.part2textdiv2{
+    margin-top: 30px;
+}
+.part1text,.part2text{
+
+    background:linear-gradient(to right, #5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-top: 2%;
+    font-size: 60px;
+    height: 150%;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 9%;
+
+}
+.whiteboxcontent{
+
+    margin-top: 25px;
+    background-color: white;
+    height:100%;
+    margin: 10px;
+    
+}
+
+.year2022{
+    writing-mode: vertical-lr;
+    color: white;
+    margin-left: 30%;
+    font-size: 100px;
+    word-spacing: 15px;
+    margin-top: 130px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.whitetext1{
+    background:linear-gradient(to right, #5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);
+    font-size: 80px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    margin-left: 4%;
+    margin-right: 5px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.whitetext3{
+    background:linear-gradient(to right,#5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);  
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-top: 10px;
+    font-size: 40px;
+    margin-left: 5%;
+    margin-right: 5px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 50px;
+
+}
+.lastSection{
+    height: 180%;
+}
+.whitetext2{
+    font-size: 200%;
+    margin-left: 10%;
+    margin-right: 5px;
+    margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.joinbutton{
+    margin-top: 50px;
+    width: 50%;
+    height: 100px;
+    margin-right: auto;
+}
+.gif1,.gif2{
+    background-image:'http://i.stack.imgur.com/kx8MT.gif';
+    height: 200px;
+    width: 200px;
+    margin-left: 20%;
+    margin-right: 50px;
+}
+.gif2{
+    width: 300px;
+    height: 200px;
+}
+
+
+.bodycontent{
+    background-color: black;
+}
+
+
+

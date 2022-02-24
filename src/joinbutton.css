@@ -1,0 +1,43 @@
+.joinbtn {
+	background-image: linear-gradient(to right, #5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);
+	border-radius: 10px;
+  box-sizing: border-box;
+	color: linear-gradient(to right, #5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);
+	display: block;
+	font: 1.125rem 'Oswald', Arial, sans-serif; /*18*/
+	height: 70px;
+	letter-spacing: 1px;
+	margin: 0 ;
+	padding: 4px;
+  margin-bottom: 5px;
+	position: relative;
+  text-decoration: none;
+	text-transform: uppercase;
+	width: 150px;
+	z-index: 2;
+  margin-left: 50%
+}
+
+
+.btnspan {
+	align-items: center;
+  
+	background: black;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	transition: background .5s ease;
+	width: 100%;
+}
+.buttontext{
+  background:linear-gradient(to right, #5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 48px;
+    text-align: center;
+    align-items: center;
+    margin-top:4px;
+    font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+}
