@@ -8,7 +8,7 @@ import privacypolicy from './Privacy Notice - MyWorld.pdf';
 export default function Form() {
     let navigate = useNavigate();
     const CheckUserExist = async (email) => {
-        return await fetch('http://localhost:5000/userExists',
+        return await fetch('https://landing-page-api-zsj74.ondigitalocean.app/userExists',
             {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
@@ -32,7 +32,7 @@ export default function Form() {
                 return;
             }
             let route = isBusiness ? 'add-business' : 'add-user';
-            fetch('http://localhost:5000/' + route, {
+            fetch('https://landing-page-api-zsj74.ondigitalocean.app/' + route, {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -45,9 +45,9 @@ export default function Form() {
             }).then(response => response.json()).then(resp => {
                 if (resp !== "") {
                     let path = '/thankyou';
-                    sendGreetingEmail();
+                    sendGreetingEmail(resp);
                     navigate(path,
-                        { state: { data: resp} });
+                        { state: { data: resp } });
                 }
                 else
                     alert("Something bad happened, Kindly try again!!!");
@@ -87,7 +87,7 @@ export default function Form() {
     const [IsCodeSentAgain, setIsCodeSentAgain] = useState(false);
 
     const GetCountries = async () => {
-        return await fetch('http://localhost:5000/countries').then((response) => response.json()).then((result) => {
+        return await fetch('https://landing-page-api-zsj74.ondigitalocean.app/countries').then((response) => response.json()).then((result) => {
             countries = result;
             setCountries(countries);
             return result;
@@ -135,9 +135,9 @@ export default function Form() {
                 console.log(error.text);
             });
     }
-    const sendGreetingEmail = async (e) => {
+    const sendGreetingEmail = async (referralId) => {
         var data = {
-            "referral_id": e.referralId,
+            "referral_id": referralId,
             "to_email": email
         }
         emailjs.send('landingpage_1234', 'template_wshevpd', data, 'user_CrBoZZHqq9leyv1IiNhWs');
@@ -156,9 +156,9 @@ export default function Form() {
 
     const handleCountry = (e) => {
         if (e.target.options[e.target.selectedIndex].text !== "Select Country")
-        setcountryDDColor('white')
+            setcountryDDColor('white')
         else
-        setcountryDDColor('grey')
+            setcountryDDColor('grey')
         setCountry(e.target.options[e.target.selectedIndex].text);
         setSubmitted(false);
     };
@@ -191,19 +191,19 @@ export default function Form() {
 
     };
     const ShowEmailSendAgain = () => {
-            return <>
-                <div className="col-sm-6 my-2" style={{ display: isCodeSent ? '' : 'none' }}>
-                    <span><b>The code will expire in 10 minutes. </b></span>
-                    <a href='#' onClick={sendMailAgain}><b>SEND AGAIN</b></a>
-                    <span><b>.</b></span>
-                </div>
-                <div className="col-sm-3 my-2" style={{ display: IsCodeSentAgain ? '' : 'none' , color : "green"}}>
-                    <span style={{color : "green"}}><b>Code sent again!!!</b></span>
-                </div>
-                {/* <div className="col-sm-12 my-2" style={{ display: isCodeVerified ? "" : "node" }}>
+        return <>
+            <div className="col-sm-6 my-2" style={{ display: isCodeSent ? '' : 'none' }}>
+                <span><b>The code will expire in 10 minutes. </b></span>
+                <a href='#' onClick={sendMailAgain}><b>SEND AGAIN</b></a>
+                <span><b>.</b></span>
+            </div>
+            <div className="col-sm-3 my-2" style={{ display: IsCodeSentAgain ? '' : 'none', color: "green" }}>
+                <span style={{ color: "green" }}><b>Code sent again!!!</b></span>
+            </div>
+            {/* <div className="col-sm-12 my-2" style={{ display: isCodeVerified ? "" : "node" }}>
                     <span><b>Code has been Verified.</b></span>
                 </div> */}
-                </>
+        </>
 
     }
     const verifyCodeRow = () => {
@@ -244,7 +244,8 @@ export default function Form() {
     const BusinessOwnerCheck = () => {
         return (
             <>
-                <div className="col-sm-8" style={{
+                <div className="col-sm-3"></div>
+                <div className="col-sm-auto no-gutter" style={{
                     display: businessownershow ? '' : 'none',
                 }}>
                     <label style={{ fontSize: '24px' }}>
@@ -253,7 +254,7 @@ export default function Form() {
                         </b>
                     </label>
                 </div>
-                <div className="col-sm-1">
+                <div className="col-sm-auto my-1">
                     <div className='messages' style={{ fontSize: '24px' }}>
                         <div
                             className="form-check form-switch"
@@ -283,7 +284,7 @@ export default function Form() {
                             <div className="row">
                                 <div className="col-sm-4 my-2">
                                     {
-                                        <select className="form-select bg-transparent" style={{ color: countryDDColor, opacity: 1, fontWeight: "bold"}} onChange={handleCountry}>
+                                        <select className="form-select bg-transparent" style={{ color: countryDDColor, opacity: 1, fontWeight: "bold" }} onChange={handleCountry}>
                                             <option>Select Country</option>
                                             {
                                                 countries.map(country => {
@@ -314,12 +315,18 @@ export default function Form() {
                                 </div>
                             </div>
                             <div className='row'>
-                                <div className="col-sm-6 my-2">
-                                    <span style={{ fontSize: '15px' }}><b>By clicking SEND code, you're confirming that you have read and acknowedged the </b></span>
+                                <div className="col-sm-auto ">
+                                    <span style={{ fontSize: '15px' }}><b>By clicking SEND code, you're confirming that</b></span>
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <div className="col-sm-auto">
+                                    <span style={{ fontSize: '15px' }}><b>you have read and acknowedged the </b></span>
                                     <a href={privacypolicy} target="_blank">Privacy Policy</a>
                                     <span style={{ fontSize: '15px' }}><b>.</b></span>
                                 </div>
                             </div>
+ 
                             <div className="row">
                                 {verifyCodeRow()}
                             </div>
@@ -379,36 +386,38 @@ export default function Form() {
                 <Header />
             </div>
             <div className="container">
-                <div className="row">
-                    <div className="col-sm-2">
+            <div className="row">
+                <div className="col-sm-2">
+                </div>
+                <div className="col-sm-auto">
+                    <div className="row">
+                        <div className="col-sm-12 my-3">
+                            <h1 style={{ fontSize: '48px' }}><b>Your community awaits. Enjoy it.</b></h1>
+                        </div>
                     </div>
-                    <div className="col-sm-10">
-                        <div className="row">
-                            <div className="col-sm my-4">
-                                <h1 style={{ fontSize: '48px' }}><b>Your community awaits. Enjoy it.</b></h1>
-                            </div>
+                </div>
+            </div>
+
+                <div className="row" style={{ display: IsToShowYearsSwitch ? '' : 'none' }}>
+                    <div className="col-sm-3"></div>
+                    <div className="col-sm-auto">
+                        <label style={{ fontSize: '24px' }}><b> Are you 18 years old or older?</b></label>
+                    </div>
+                    <div className="col-sm-auto my-1" >
+                        <div className="form-check form-switch" style={{ fontSize: '24px' }}>
+                            <label htmlFor="flexSwitchCheckDefault"></label>
+                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={enableBusinessOwner}></input>
                         </div>
-                        <div className="row" style={{ display: IsToShowYearsSwitch ? '' : 'none' }}>
-                            <div className="col-sm-6">
-                                <label style={{ fontSize: '24px' }}><b> Are you 18 years old or older?</b></label>
-                            </div>
-                            <div className="col-sm-6 my-1" >
-                                <div className="form-check form-switch" style={{ fontSize: '24px' }}>
-                                    <label htmlFor="flexSwitchCheckDefault"></label>
-                                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={enableBusinessOwner}></input>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            {BusinessOwnerCheck()}
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-6 my-1">
-                                <div className="messages">
-                                    {errorMessage()}
-                                    {successMessage()}
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div className="row">
+                    {BusinessOwnerCheck()}
+                </div>
+                <div className="row">
+                    <div className="col-sm-6 my-1">
+                        <div className="messages">
+                            {errorMessage()}
+                            {successMessage()}
                         </div>
                     </div>
                 </div>

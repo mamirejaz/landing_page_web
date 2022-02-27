@@ -17,7 +17,7 @@ function Header() {
                     <h2 className='titletext' style={{paddingTop: '10px'}}>MyWorld</h2>
                 </div>
                 <div className='icons'>
-                    <a href='https://www.twitter.com/' className='twitterIcon'>
+                    <a href='https://www.twitter.com/' width="20%" height="20%" className='twitterIcon'>
                         <FontAwesomeIcon icon={faTwitter} size="2x" />
                     </a>
                     <a href='https://www.linkedin.com/' className='LinkedinIcon'>

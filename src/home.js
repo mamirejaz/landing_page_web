@@ -17,7 +17,7 @@ export default function Home() {
             <div className='row' >
               <div className='col-md-6 my-6' >
                 <div className='maintext'>
-                  <h1 className='introtext'> Where people retrieve
+                  <h1 className='introtext maintext'> Where people retrieve
                     their sense of humanity
                   </h1>
                 </div>
