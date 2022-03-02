@@ -1,6 +1,6 @@
 .maintext{
     background-image: linear-gradient(to right, #5F77C5 0%,#C17A9A 33%, #EE7D3C 67%, #EAAC00 100%);
-    height: 220px;
+    height: auto;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     margin-top: 10%;

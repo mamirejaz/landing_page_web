@@ -14,17 +14,17 @@ function Header() {
                     <img className='logomyworld' alt='MyWorld' src={require('./logomyworld2.jpg')} ></img>
                 </a>
                 <div className='title'>
-                    <h2 className='titletext' style={{paddingTop: '10px'}}>MyWorld</h2>
+                    <h2 className='titletext' style={{paddingTop: '12px'}}>MyWorld</h2>
                 </div>
                 <div className='icons'>
-                    <a href='https://www.twitter.com/' width="20%" height="20%" className='twitterIcon'>
-                        <FontAwesomeIcon icon={faTwitter} size="2x" />
+                    <a href='https://www.twitter.com/'  className='twitterIcon'>
+                        <FontAwesomeIcon icon={faTwitter} className = 'socialmediaicons' />
                     </a>
                     <a href='https://www.linkedin.com/' className='LinkedinIcon'>
-                        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                        <FontAwesomeIcon icon={faLinkedin} className = 'socialmediaicons' />
                     </a>
                     <a href='https://www.facebook.com/' className='planeIcon'>
-                        <FontAwesomeIcon icon={faPaperPlane} size="2x" />
+                        <FontAwesomeIcon icon={faPaperPlane} className = 'socialmediaicons' />
                     </a>
                 </div>
 

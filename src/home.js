@@ -15,7 +15,7 @@ export default function Home() {
         <div className='commonproperties'>
           <div className="container">
             <div className='row' >
-              <div className='col-md-6 my-6' >
+              <div className='col-md-6 my-12' >
                 <div className='maintext'>
                   <h1 className='introtext maintext'> Where people retrieve
                     their sense of humanity
@@ -23,6 +23,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div className='row'></div>
           </div>
 
           <div className="container">

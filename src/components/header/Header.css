@@ -1,25 +1,29 @@
 .headercontainer{
 background-color: black;
-height: 75px;
+height: calc(50px + 2vh);
 }
 .logomyworld{
     float: left;
-    margin-left: 50px;
+    margin-left: 4vw;
     margin-top:10px;
-    width: 50px;
-    height: 50px;
+    width: calc(30px +  1vw);
+    height: calc(30px +  1vw);
     background-image: "file:logomyworld2.jpg";
 }
 .titletext{
-    font-size: 40px;
     font-family: 'Roboto', sans-serif;
+    top:50%;
+    bottom: 50%;
+    font-size: calc(20px + 1vw);
 }
 .title{
    
     color: #f0f8ff;
     float: left;
-    margin-left: 30px;
+    margin-left: 1vw;
     vertical-align: center;
+    top:50%;
+    bottom: 50%;
    
     
 }
@@ -42,3 +46,8 @@ height: 75px;
     color: white;
 }
 
+.socialmediaicons
+{
+    font-size: calc(20px + 1vw);
+   
+}
